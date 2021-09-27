@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "HVYnYDlc1ehckdCZmAq20/t8KsGmgvYdhMzGFd0e1L3BSwDsU/3jSp0wxwxaH69CeJ+q3qE7pmfFjhAqlqFSNQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\darkz\\OneDrive\\Escritorio\\Nueva carpeta\\Compiler-master\\Compiler.Core\\Compiler.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\darkz\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
+  ],
+  "logs": []
+}

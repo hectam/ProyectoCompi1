@@ -1,0 +1,43 @@
+﻿{
+    float o;
+    int x;
+    int y;
+    int w;
+	
+    string a;
+    x = 2;
+    y = 1;
+    o = 5.89;
+    a = "hola peter!" + o;
+	
+	
+    if(o==0)
+    {
+	Console.WriteLine("yes");
+	if(x > 1)
+	{
+	    Console.WriteLine("sure");
+	}
+	else
+	{ 
+		x = 4;
+	    Console.WriteLine("who knows");
+		x = 5;
+	}
+    }
+    else if(y == 1)
+    {
+	Console.WriteLine("no");
+	if(y > 2)
+	    Console.WriteLine("true");
+
+	if(0 > 1)
+	{
+	    int one;
+	    int two;
+	    one = 1;
+	    two = 2;
+	    Console.WriteLine(one+two);
+       }
+    }
+}

@@ -1,0 +1,9 @@
+C:\Users\darkz\OneDrive\Escritorio\Nueva carpeta\Compiler-master\Compiler.Core\bin\Debug\netcoreapp3.1\Compiler.Core.deps.json
+C:\Users\darkz\OneDrive\Escritorio\Nueva carpeta\Compiler-master\Compiler.Core\bin\Debug\netcoreapp3.1\Compiler.Core.dll
+C:\Users\darkz\OneDrive\Escritorio\Nueva carpeta\Compiler-master\Compiler.Core\bin\Debug\netcoreapp3.1\Compiler.Core.pdb
+C:\Users\darkz\OneDrive\Escritorio\Nueva carpeta\Compiler-master\Compiler.Core\obj\Debug\netcoreapp3.1\Compiler.Core.csprojAssemblyReference.cache
+C:\Users\darkz\OneDrive\Escritorio\Nueva carpeta\Compiler-master\Compiler.Core\obj\Debug\netcoreapp3.1\Compiler.Core.AssemblyInfoInputs.cache
+C:\Users\darkz\OneDrive\Escritorio\Nueva carpeta\Compiler-master\Compiler.Core\obj\Debug\netcoreapp3.1\Compiler.Core.AssemblyInfo.cs
+C:\Users\darkz\OneDrive\Escritorio\Nueva carpeta\Compiler-master\Compiler.Core\obj\Debug\netcoreapp3.1\Compiler.Core.csproj.CoreCompileInputs.cache
+C:\Users\darkz\OneDrive\Escritorio\Nueva carpeta\Compiler-master\Compiler.Core\obj\Debug\netcoreapp3.1\Compiler.Core.dll
+C:\Users\darkz\OneDrive\Escritorio\Nueva carpeta\Compiler-master\Compiler.Core\obj\Debug\netcoreapp3.1\Compiler.Core.pdb
