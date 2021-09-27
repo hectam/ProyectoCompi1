@@ -29,6 +29,9 @@ namespace Compiler.Core.Expressions
                 TokenType.Minus => LeftExpression.Evaluate() - RightExpression.Evaluate(),
                 TokenType.Asterisk => LeftExpression.Evaluate() * RightExpression.Evaluate(),
                 TokenType.Division => LeftExpression.Evaluate() / RightExpression.Evaluate(),
+                TokenType.PlusPlus => LeftExpression.Evaluate() + 1,
+                TokenType.MinMin => LeftExpression.Evaluate() - 1,
+                TokenType.Mod => LeftExpression.Evaluate() % RightExpression.Evaluate(),
                 _ => throw new NotImplementedException()
             };
         }

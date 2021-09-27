@@ -22,6 +22,8 @@ namespace Compiler.Core
         public static Type String => new Type("string", TokenType.BasicType);
         public static Type Void => new Type("void", TokenType.BasicType);
 
+        public static Type Char => new Type("char", TokenType.BasicType);
+
 
         public bool Equals(Type other)
         {

@@ -10,26 +10,22 @@ namespace Compiler.Core.Statements
         {
             Id = id;
             Expression = expression;
-            declared = 0;
+            declared = false;
         }
 
         public Id Id { get; }
         public TypedExpression Expression { get; }
 
-        public int declared { get; set; }
+        public bool declared { get; set; }
 
         public override string Generate(int tabs)
         {
             var code = GetCodeInit(tabs);
             var declaration = "";
            
-            if (false)
-			{
                 declaration += $"var {Id.Generate()};{Environment.NewLine}";
                 declaration += GetCodeInit(tabs);
-                declared++;
-
-            }
+              
 
             
             code += declaration;
@@ -37,12 +33,7 @@ namespace Compiler.Core.Statements
             return code;
         }
 
-        public string GenerateVar(int tabs)
-		{
-            var code = GetCodeInit(tabs);
-            
-            return code;
-        }
+       
 
         public override void Interpret()
         {

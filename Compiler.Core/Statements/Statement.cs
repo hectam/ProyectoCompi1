@@ -10,6 +10,8 @@ namespace Compiler.Core.Statements
 
         public abstract string Generate(int tabs);
 
+        
+
         public virtual string GetCodeInit(int tabs)
         {
             var code = string.Empty;

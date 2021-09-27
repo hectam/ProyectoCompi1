@@ -36,6 +36,18 @@ namespace Compiler.Core
         StringKeyword,
         DoubleConstant,
         DoubleKeyword,
-        Dot
+        Dot,
+        AND,
+        OR,
+        NOT,
+        PlusPlus,
+        MinMin,
+        Mod,
+        Method,
+        ForEeachKeyword,
+        Void,
+        CharKeyword, 
+        inKeyword,
+        WhileKeyword
     }
 }
