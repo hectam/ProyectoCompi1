@@ -29,11 +29,17 @@ namespace Compiler.Core.Statements
 			var closekey = "}";
 			var code = "";
 			code += GetCodeInit(tabs);
-			code += $" function {id.Generate()}({arg.Token.Lexeme}){key}{Environment.NewLine}";
+			code += $" function {id.Generate()}({innerGenerate()}){key}{Environment.NewLine}";
 			code += GetCodeInit(tabs);
-			code += $" {Stm.Generate(tabs+1)} {closekey}{Environment.NewLine}";
+			code += $" {Stm.Generate(tabs+1)}; {closekey}{Environment.NewLine}";
 			return code;
 		}
+
+		public string innerGenerate()
+		{
+			var code = $"{arg.LeftExpression?.Generate()},{arg.RightExpression?.Generate()}";
+			return code;
+	}
 
 		public override void Interpret()
 		{
@@ -43,7 +49,7 @@ namespace Compiler.Core.Statements
 
 		public override void ValidateSemantic()
 		{
-			Console.WriteLine("asda");
+			Stm.ValidateSemantic();
 		}
 	}
 }

@@ -30,7 +30,7 @@ namespace Compiler.Core.Statements
             code += GetCodeInit(tabs);
             code += $"if({innerGenerate(tabs,Type)}){key} {Environment.NewLine}";
             key = '}';
-            code += $"{Statement.Generate(tabs + 1)}{Environment.NewLine}";
+            code += $"{Statement.Generate(tabs + 1)};{Environment.NewLine}";
             code += GetCodeInit(tabs);
             code += $"{key}{Environment.NewLine}";
 

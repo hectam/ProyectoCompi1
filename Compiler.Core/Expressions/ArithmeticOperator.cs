@@ -6,6 +6,7 @@ namespace Compiler.Core.Expressions
     public class ArithmeticOperator : TypedBinaryOperator
     {
         private readonly Dictionary<(Type, Type), Type> _typeRules;
+        private readonly Dictionary<Type, Func<DateTime, dynamic, dynamic>> _evaluationDictionary;
         public ArithmeticOperator(Token token, TypedExpression leftExpression, TypedExpression rightExpression)
             : base(token, leftExpression, rightExpression, null)
         {
@@ -17,12 +18,49 @@ namespace Compiler.Core.Expressions
                 { (Type.Float, Type.Int), Type.Float },
                 { (Type.Int, Type.Float), Type.Float },
                 { (Type.String, Type.Int), Type.String  },
-                { (Type.String, Type.Float), Type.String  }
+                { (Type.String, Type.Float), Type.String  },
+                 {(Type.Date, Type.Year), Type.Date},
+                {(Type.Date, Type.Month), Type.Date},
+                {(Type.Date, Type.Day), Type.Date},
+                //-----------------------------
+                {(Type.TimeStamp, Type.TimeStamp), Type.TimeStamp},
+                {(Type.TimeStamp, Type.Hour), Type.TimeStamp},
+                {(Type.TimeStamp, Type.Minute), Type.TimeStamp},
+                {(Type.TimeStamp, Type.Second), Type.TimeStamp},
+
+            };
+
+            _evaluationDictionary = new Dictionary<Type, Func<DateTime, dynamic, dynamic>>
+            {
+                [Type.Hour] = (leftExpression, rightExpression) => leftExpression.AddHours(rightExpression),
+                [Type.Minute] = (leftExpression, rightExpression) => leftExpression.AddMinutes(rightExpression),
+                [Type.Second] = (leftExpression, rightExpression) => leftExpression.AddSeconds(rightExpression),
+                [Type.Year] = (leftExpression, rightExpression) => leftExpression.AddYears(rightExpression),
+                [Type.Month] = (leftExpression, rightExpression) => leftExpression.AddMonths(rightExpression),
+                [Type.Day] = (leftExpression, rightExpression) => leftExpression.AddDays(rightExpression),
             };
         }
 
         public override dynamic Evaluate()
         {
+            var rightExpressionType = RightExpression.GetExpressionType();
+            if (Token.TokenType == TokenType.Plus)
+            {
+                if (_evaluationDictionary.ContainsKey(rightExpressionType))
+                {
+                    return GetExpressionResult(1);
+                }
+                return LeftExpression.Evaluate() + RightExpression.Evaluate();
+            }
+            else if (Token.TokenType == TokenType.Minus)
+            {
+                if (_evaluationDictionary.ContainsKey(rightExpressionType))
+                {
+                    return GetExpressionResult(-1);
+                }
+
+                return LeftExpression.Evaluate() - RightExpression.Evaluate();
+            }
             return Token.TokenType switch
             {
                 TokenType.Plus => LeftExpression.Evaluate() + RightExpression.Evaluate(),
@@ -34,6 +72,8 @@ namespace Compiler.Core.Expressions
                 TokenType.Mod => LeftExpression.Evaluate() % RightExpression.Evaluate(),
                 _ => throw new NotImplementedException()
             };
+            
+            throw new ApplicationException($"Cannot perform Binary operation on {LeftExpression.GetExpressionType()}, {RightExpression.GetExpressionType()}");
         }
 
         public override string Generate()
@@ -45,6 +85,13 @@ namespace Compiler.Core.Expressions
             }
 
             return $"{LeftExpression.Generate()} {Token.Lexeme} {RightExpression.Generate()}";
+        }
+        private dynamic GetExpressionResult(int multiplier)
+        {
+            var rightExpressionType = RightExpression.GetExpressionType();
+            var leftExpressionDate = LeftExpression.Evaluate() is DateTime ? (DateTime)LeftExpression.Evaluate() : default;
+            var rightExpression = RightExpression.Evaluate();
+            return _evaluationDictionary[rightExpressionType](leftExpressionDate, rightExpression * multiplier);
         }
 
         public override Type GetExpressionType()

@@ -11,7 +11,7 @@
             Token = token;
             this.type = type;
         }
-
+      
         public abstract string Generate();
     }
 }

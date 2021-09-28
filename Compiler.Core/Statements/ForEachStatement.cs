@@ -34,7 +34,7 @@ namespace Compiler.Core.Statements
             code += GetCodeInit(tabs);
             code += $"function myfunction({Token1.Lexeme}){key}{Environment.NewLine}";
             code += GetCodeInit(tabs);
-            code += $" {Statement.Generate(tabs)} {closeKey}{Environment.NewLine}";
+            code += $" {Statement.Generate(tabs)}; {closeKey}{Environment.NewLine}";
 
             return code;
         }

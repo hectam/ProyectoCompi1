@@ -15,7 +15,7 @@ namespace Compiler.Core
             Lexeme = lexeme;
             TokenType = tokenType;
         }
-
+        
         public static Type Int => new Type("int", TokenType.BasicType);
         public static Type Float => new Type("float", TokenType.BasicType);
         public static Type Bool => new Type("bool", TokenType.BasicType);
@@ -23,6 +23,15 @@ namespace Compiler.Core
         public static Type Void => new Type("void", TokenType.BasicType);
 
         public static Type Char => new Type("char", TokenType.BasicType);
+
+        public static Type Date => new Type("Date", TokenType.TimeBasic);
+        public static Type TimeStamp => new Type("TimeStamp", TokenType.TimeBasic);
+        public static Type Day => new Type("Day", TokenType.TimeBasic);
+        public static Type Month => new Type("Month", TokenType.TimeBasic);
+        public static Type Year => new Type("Year", TokenType.TimeBasic);
+        public static Type Hour => new Type("Hour", TokenType.TimeBasic);
+        public static Type Minute => new Type("Minute", TokenType.TimeBasic);
+        public static Type Second => new Type("Second", TokenType.TimeBasic);
 
 
         public bool Equals(Type other)

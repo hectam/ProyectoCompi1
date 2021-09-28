@@ -32,7 +32,7 @@ namespace Compiler.Core.Statements
 
                 code += $"if({innerGenerate(tabs,_Type)}){key}{Environment.NewLine}";
 
-                code += $"{TrueStatement.Generate(tabs + 1)}{Environment.NewLine}";
+                code += $"{TrueStatement.Generate(tabs + 1)};{Environment.NewLine}";
 
                 code += GetCodeInit(tabs);
                 code += $"{closeKey}{Environment.NewLine}";
@@ -42,7 +42,7 @@ namespace Compiler.Core.Statements
                 }
 
                 code += $"else{key}{Environment.NewLine}";
-                code += $"{FalseStatement.Generate(tabs + 1)}{Environment.NewLine}";
+                code += $"{FalseStatement.Generate(tabs + 1)}; {Environment.NewLine}";
                 code += GetCodeInit(tabs);
                 code += $"{closeKey}{Environment.NewLine}";
                 return code;

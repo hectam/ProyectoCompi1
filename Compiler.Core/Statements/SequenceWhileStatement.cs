@@ -28,7 +28,7 @@ namespace Compiler.Core.Statements
 			var code = GetCodeInit(tabs);
 			code += $"while({innerGenerate(tabs, Tpy)}){key} {Environment.NewLine}";
 
-			code += $"{Statement.Generate(tabs + 1)}{Environment.NewLine}";
+			code += $"{Statement.Generate(tabs + 1)};{Environment.NewLine}";
 			code += GetCodeInit(tabs);
 			code += $"{closekey}{Environment.NewLine}";
 			return code;

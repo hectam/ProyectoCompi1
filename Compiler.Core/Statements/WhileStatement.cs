@@ -24,7 +24,7 @@ namespace Compiler.Core.Statements
 			var code = GetCodeInit(tabs);
 			code += $"while({Token1.Generate()}){key} {Environment.NewLine}";
 			
-			code += $"{Statement.Generate(tabs + 1)}{Environment.NewLine}";
+			code += $"{Statement.Generate(tabs + 1)};{Environment.NewLine}";
 			code += GetCodeInit(tabs);
 			code += $"{closekey}{Environment.NewLine}";
 			return code;

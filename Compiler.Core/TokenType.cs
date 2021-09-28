@@ -25,7 +25,7 @@ namespace Compiler.Core
         Identifier,
         IntConstant,
         FloatConstant,
-        Assignation,
+        Colon,
         StringConstant,
         EOF,
         OpenBrace,
@@ -48,6 +48,17 @@ namespace Compiler.Core
         Void,
         CharKeyword, 
         inKeyword,
-        WhileKeyword
-    }
+        WhileKeyword,
+        BoolKeyword,
+        ClassKeyword,
+		DayKeyword,
+		MonthKeyword,
+		YearKeyword,
+		HourKeyword,
+		MinuteKeyword,
+		SecondKeyword,
+		Number,
+        TimeBasic,
+		VarKeyword
+	}
 }

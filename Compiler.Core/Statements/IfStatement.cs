@@ -21,7 +21,7 @@ namespace Compiler.Core.Statements
             var code = GetCodeInit(tabs);
             code += $"if({Expression.Generate()}){key} {Environment.NewLine}";
             key = '}';
-            code += $"{Statement.Generate(tabs + 1)}{Environment.NewLine}";
+            code += $"{Statement.Generate(tabs + 1)};{Environment.NewLine}";
             code += GetCodeInit(tabs);
             code += $"{key}{Environment.NewLine}";
             return code;

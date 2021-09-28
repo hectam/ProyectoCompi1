@@ -24,6 +24,10 @@ namespace Compiler.Core.Statements
             {
                 InnerEvaluate(Arguments);
             }
+            if (method.Id.Token.Lexeme == "Console.ReadLine")
+            {
+                InnerEvaluate(Arguments);
+            }
         }
 
         private void InnerEvaluate(Expression arguments)
