@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "t2MIIlY1lMB026MlRJQ+U5Tv2pD8OfkLxObIMk9EDz4q9J65xic6NLt2JOgravCisDwha05j+iIHtOSH+EJz3Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\darkz\\OneDrive\\Escritorio\\Nueva carpeta\\DateTimeCompiler-master\\DateTimeCompiler.Lexer\\DateTimeCompiler.Lexer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\darkz\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
+  ],
+  "logs": []
+}
